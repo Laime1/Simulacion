@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Gestión de Inventarios</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Caso de Estudio: Gestión de Inventarios</h1>
+    </header>
+    <main>
+        <section id="simulacion">
+            <h2>Simulación de Inventarios</h2>
+            <form id="simulacion-form">
+                <label for="politica">Selecciona una Política de Inventario:</label>
+                <select id="politica" name="politica">
+                    <option value="politica1">Política 1: Ordenar cada 8 días hasta tener 30 artículos en inventario</option>
+                    <option value="politica2">Política 2: Ordenar hasta 30 artículos cuando el nivel del inventario sea menor o igual a 10</option>
+                </select>
+
+                <label for="duracion">Duración de la Simulación (días):</label>
+                <input type="number" id="duracion" name="duracion" min="1" value="30">
+
+                <button type="submit" id="iniciar-simulacion">Iniciar Simulación</button>
+//Dia
+                <label for="">Dia:</label>
+                <input type="number" name="Dia" id="Dia" placeholder="Dia" value="1">
+//Demanda Diaria
+                <label for="Demanda">Demanda:</label>
+                <input type="number" name="Demanda" id="Demanda" placeholder="Demanda" value="">
+
+            </form>
+
+            <div id="resultados">
+                <!-- Aquí se mostrarán los resultados de la simulación -->
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Derechos de autor © 2023</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
