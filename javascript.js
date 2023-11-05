@@ -6,8 +6,8 @@ function simularInventarios(politica, duracion) {
     let pedidosRealizados = 0;
 
     // Datos de demanda y tiempo de entrega (deben definirse)
-    const demandaDiaria = [/* Array de valores de demanda */];
-    const tiempoEntrega = [/* Array de valores de tiempo de entrega */];
+    const demandaDiaria = [/*  valores de demanda */];
+    const tiempoEntrega = [/*  valores de tiempo de entrega */];
 
     // Simulación de inventarios
     for (let dia = 1; dia <= duracion; dia++) {
