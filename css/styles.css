@@ -24,15 +24,31 @@ main {
 
 /* Estilos para el formulario */
 #simulacion-form {
-    margin: 20px 0;
+    place-items: center;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Crea 3 columnas con un ancho igual */
+    grid-gap: 10px;
+    border: 2px solid #000; /* Añade un borde sólido de 2px de grosor */
+    padding: 20px; /* Añade espacio interno alrededor del formulario */
+    border-radius: 15px;
 }
+
+    #iniciar-simulacion {
+        grid-column: 1 / span 2; /* Hace que el botón ocupe dos columnas */
+    }
 
 label {
     display: block;
     margin: 10px 0;
 }
 
-input[type="number"] {
+input[type="number"],
+     [type="text"] {
+    width: 80%;
+    padding: 10px;
+}
+
+select{
     width: 80%;
     padding: 10px;
 }
