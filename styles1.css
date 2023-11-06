@@ -1,3 +1,4 @@
+
 /* Estilos para la página */
 body {
     font-family: Arial, sans-serif;
@@ -14,7 +15,7 @@ header {
 }
 
 main {
-    max-width: 800px;
+    max-width: 90%;
     margin: 20px auto;
     background-color: #fff;
     padding: 20px;
@@ -49,11 +50,6 @@ button:hover {
     background-color: #555;
 }
 
-/* Estilos para los resultados */
-#resultados {
-    margin-top: 20px;
-}
-
 footer p {
     text-align: center;
 }
@@ -62,9 +58,39 @@ h2{
     text-align: center;
 }
 
-.contenedor {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Crea 3 columnas con un ancho igual */
-    grid-gap: 10px; /* Espacio entre elementos (ajusta según lo necesites) */
+#resultados {
+    margin: 20px;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px #888888;
   }
   
+  #resultados table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  #resultados th, #resultados td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ccc;
+  }
+  
+  #resultados th {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  #resultados th:first-child, #resultados td:first-child {
+    text-align: left;
+  }
+  
+  #resultados tbody tr:nth-child(odd) {
+    background-color: #f0f0f0;
+  }
+  
+  #resultados tbody tr:hover {
+    background-color: #e0e0e0;
+  }
