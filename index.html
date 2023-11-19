@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Gestión de Inventarios</title>
-    <link rel="stylesheet" type="text/css" href="css/styles1.css">
+    <link rel="stylesheet" type="text/css" href="css/formulario.css">
 </head>
 <body>
     <header>
@@ -15,14 +15,19 @@
             <form id="simulacion-form" method="get" action="tablaSimulacion.html"  >
                 <label for="politica">Selecciona una Política de Inventario:</label>
                 <select id="politica" name="politica">
-                    <option value="politica1" >Política 1: Ordenar cada 8 días hasta tener 30 artículos en inventario</option>
-                    <option value="politica2">Política 2: Ordenar hasta 30 artículos cuando el nivel del inventario sea menor o igual a 10</option>
+                    <option value="politica1" >Política 1</option>
+                    <option value="politica2">Política 2</option>
+                    <option value="politica3">Ambas Politicas</option>
                 </select>
 
-                <label for="duracion">Duración de la Simulación (días):</label>
-                <input type="number" id="duracion" name="duracion" min="1" value="30">
-
+                
+                <input type="number" id="duracion" name="duracion" min="1" placeholder="Duracion de La Simulacion (dias)">
+                <input type="number" name="inventario" id="inventario" placeholder="Inventario Inicial">
+                <input type="number" name="costoM" id="costoM" placeholder="Costo de Mantenimiento">
+                <input type="number" name="costoD" id="costoD" placeholder="Costo de Deficid">
+                <input type="number" name="costoP" id="costoP" placeholder="Costo de Pedido">
                 <button type="submit" id="iniciar-simulacion">Iniciar Simulación</button>
+                
             </form>
         </section>
     </main>
