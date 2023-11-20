@@ -46,8 +46,8 @@ header {
   }
   
   #resultados th,#resultados2 th {
-    background-color: #333;
-    color: #fff;
+    background-color: orange;
+    color: black;
   }
   
   #resultados th:first-child, #resultados td:first-child {
