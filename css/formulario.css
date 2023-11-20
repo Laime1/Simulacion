@@ -2,7 +2,6 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    height: 100vh; /* Establece la altura del cuerpo al 100% de la ventana de visualización */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -13,7 +12,7 @@ body {
 header {
     color: black;
     text-align: center;
-    padding: 1px;
+    padding: 10px;
 }
 
 main {

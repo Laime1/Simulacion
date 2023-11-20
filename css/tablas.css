@@ -89,8 +89,11 @@ button {
   padding: 20px;
   background-color: white;
   display: none;
-  width: 400px;
-  height: 300px;
   border: 1px solid #ccc;
+  
+}
+canvas{
+  width: 50%;
+  height: 50%;
 }
 
