@@ -1,24 +1,28 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
     margin: 0;
     padding: 0;
+    height: 100vh; /* Establece la altura del cuerpo al 100% de la ventana de visualización */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgb(201, 201, 209);
 }
 
 header {
-    background-color: #333;
-    color: #fff;
+    color: black;
     text-align: center;
     padding: 1px;
 }
 
 main {
-    max-width: 90%;
+    max-width: 30%;
     margin: 20px auto;
     background-color: #fff;
     padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
 }
 
 /* Estilos para el formulario */
@@ -27,7 +31,6 @@ main {
 }
 
 label {
-    display: block;
     margin: 10px 0;
     text-align: center;
 }
@@ -35,14 +38,16 @@ label {
 input[type="number"] {
     width: 80%;
     padding: 10px;
+    border-radius: 8px;
 }
 
 button {
-    background-color: #333;
+    background-color:rgb(76, 76, 246);
     color: #fff;
     padding: 10px 20px;
     border: none;
     cursor: pointer;
+    border-radius: 8px;
 }
 
 button:hover {
@@ -61,7 +66,7 @@ h2{
 #simulacion-form {
     place-items: center;
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Crea 3 columnas con un ancho igual */
+    grid-template-columns: repeat(1, 1fr); /* Crea 3 columnas con un ancho igual */
     grid-gap: 10px;
     border: 2px solid #000; /* Añade un borde sólido de 2px de grosor */
     padding: 20px; /* Añade espacio interno alrededor del formulario */
@@ -69,10 +74,15 @@ h2{
 }
 
     #iniciar-simulacion {
-        grid-column: 1 / span 2; /* Hace que el botón ocupe dos columnas */
+        grid-column: 1 /2; /* Hace que el botón ocupe dos columnas */
     }
 
     select{
       width: 80%;
       padding: 10px;
+      border-radius: 8px;
   }
+  option{
+    text-align: center;
+  }
+

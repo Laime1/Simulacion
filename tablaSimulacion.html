@@ -4,13 +4,16 @@
     <meta charset="UTF-8">
     <title>Tabla de Simulación</title>
     <link rel="stylesheet" type="text/css" href="css/tablas.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <header>
         <h1>Resultados de la Simulación</h1>
     </header>
     <div class="contenedor" id="contenedor">
+
     <div id="resultados" class="resultados">
+        <h1 id="titulo1">POLÍTICA 1</h1>
         <table>
             <thead>
                 <tr>
@@ -20,12 +23,12 @@
                     <th>Inventario Final</th>
                     <th>Faltante</th>
                     <th>Costo Mantenimiento</th>
-                    <th>Costo Deficid</th>
-                    <th>Pedir Inventario?</th>
+                    <th>Costo Défici</th>
+                    <th>¿Pedir Inventario?</th>
                     <th>Cantidad de Pedido</th>
                     <th>Tiempo de Entrega</th>
                     <th>Costo de Pedido</th>
-                    <th>Costo Dia</th>
+                    <th>Costo Día</th>
                 </tr>
             </thead>
             <tbody></tbody>
@@ -34,6 +37,7 @@
 
     <div id="resultados2" class="contenedor2">
         <table>
+            <h1>POLÍTICA 2</h1>
             <thead>
                 <tr>
                     <th>Día</th>
@@ -42,17 +46,19 @@
                     <th>Inventario Final</th>
                     <th>Faltante</th>
                     <th>Costo Mantenimiento</th>
-                    <th>Costo Deficid</th>
-                    <th>Pedir Inventario?</th>
+                    <th>Costo Défici</th>
+                    <th>¿Pedir Inventario?</th>
                     <th>Cantidad de Pedido</th>
                     <th>Tiempo de Entrega</th>
                     <th>Costo de Pedido</th>
-                    <th>Costo Dia</th>
+                    <th>Costo Día</th>
                 </tr>
             </thead>
             <tbody></tbody>
-        </table>
+        </table> 
     </div>
+    <button id="mostrarGraficoBtn">Gráfico</button>
+    <canvas id="miGrafico"></canvas>
 
   </div>
     <footer>
@@ -62,6 +68,7 @@
     <script src="scripts/demanda.js"></script>
     <script src="scripts/tiempoEntrega.js"></script>
     <script src="scripts/datosEntrada.js"></script>
+    <script src="scripts/graficos.js"></script>
     <script src="scripts/simu.js"></script>
 
 </body>

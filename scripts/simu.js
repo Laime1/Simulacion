@@ -8,6 +8,29 @@ var duracion = datoss.duracion;
 var tablaResultados = document.querySelector("#resultados table tbody"); 
 var tablaResultados2 = document.querySelector("#resultados2 table tbody"); 
 
+var datosTabla = new Array();
+    
+
+var datosGrafico = {
+    labels: [],  // Aquí puedes poner etiquetas como 'Día 1', 'Día 2', etc.
+    datasets: [{
+        label: 'Costo Total del Dia',
+        data: [],  // Aquí debes poner los costos totales de cada día
+        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+        borderColor: 'rgba(75, 192, 192, 1)',
+        borderWidth: 1
+    }]
+};
+var datosAmbos = {
+    labels: ['POLÍTICA 1', 'POLÍTICA 2'],  // Aquí puedes poner etiquetas como 'Día 1', 'Día 2', etc.
+    datasets: [{
+        label: 'Costo Total',
+        data: [],  // Aquí debes poner los costos totales de cada día
+        backgroundColor: ['orange', 'blue'],
+        borderColor: 'rgba(75, 192, 192, 1)',
+        borderWidth: 1
+    }]
+};
 
 
 function iniciarSimulacion(politica, tabla){
@@ -23,12 +46,15 @@ var costoD;
 var deficid;
 var pedir, tiempoEntrega;
 var cantidadPedido = 0;
-var costoTotalDia, costoTotal;
+var costoTotalDia, costoTotal = 0;
+
+
 
     function avanzarDia(){
 
         if(dia<=duracion){
-            
+        datosGrafico.labels.push(`Día ${dia}`);
+
         var demandaDiaria = generarDemandaBinomial(6,0.5);
         var fila = document.createElement("tr");
         fila.innerHTML = `<td>${dia}</td>    
@@ -56,6 +82,10 @@ var costoTotalDia, costoTotal;
                                <td>${dia%8 ===0 ? costoTotalDia=costoM+costoPedido:costoTotalDia=costoM+costoD}</td>`; 
             costoTotal+=costoTotalDia;   //El costo total  acumulado de cada dia
             inventarioI = tiempoEntrega === 0 ? cantidadPedido + inventarioF: inventarioF;
+            datosGrafico.datasets[0].data.push(costoTotalDia);
+            //datosAmbos.datasets[0].data.push(costoTotal);
+
+            datosTabla.push(costoTotal);
 
         }else{
             fila.innerHTML += `
@@ -67,9 +97,13 @@ var costoTotalDia, costoTotal;
                 costoTotal+=costoTotalDia;   
                 inventarioI = tiempoEntrega === 0 ? cantidadPedido + inventarioF: inventarioF;
                 cantidadPedido = tiempoEntrega === 0 ? 0:cantidadPedido;
+                datosTabla.push(costoTotal);
+                datosGrafico.datasets[0].data.push(costoTotalDia);
+                //datosAmbos.datasets[0].data.push(costoTotal);
+
+
         }
 
-        
 
         tabla.appendChild(fila);
         setTimeout(avanzarDia, 500);
@@ -79,11 +113,27 @@ var costoTotalDia, costoTotal;
     }
   }
   avanzarDia();
+//   console.log(datosTabla);
+//   console.log(datosAmbos);
+
 }
+
+
+
 if(politica === "politica1" || politica === "politica2"){
     document.getElementById("resultados2").remove();
     iniciarSimulacion(politica,tablaResultados);
+    if(politica === "politica2"){
+        document.getElementById("titulo1").innerHTML = "POLÍTICA 2";
+    }
+    graficos(datosGrafico,"bar",null);
+    //quiero crear un boton para mostrar los datos que guarde en datosGrafico, para mostrar un grafico de barras
 }else{
+    
     iniciarSimulacion("politica1",tablaResultados);
     iniciarSimulacion("politica2",tablaResultados2);
+    console.log(datosAmbos);
+    graficos(datosAmbos,"pie",datosTabla);
 }
+
+//graficos(datosGrafico,"bar");
