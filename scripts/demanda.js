@@ -1,12 +1,24 @@
-function generarDemandaBinomial(n, p) {  //funcion que genera la demanda diaria que recive como parametros al numero de ensayos y a la probabilidad
-    const probabilidadExito = p;  //Inicializando la probabilidad
-    let demandaDiaria = 0;  //Inicializando la demanda
+// Esta función genera la demanda diaria utilizando la distribución binomial.
+// Recibe dos parámetros: n (número de ensayos) y p (probabilidad de éxito).
+function generarDemandaBinomial(n, p) {
+    // Inicializando la probabilidad de éxito.
+    const probabilidadExito = p;
+    
+    // Inicializando la demanda diaria.
+    let demandaDiaria = 0;
 
-    for (let i = 0; i < n; i++) {       //bucle 
-        const numeroAleatorio = Math.random();  //un numero aleaorio
-        if (numeroAleatorio < probabilidadExito) {  //si el numero aleatorio generado es menor a la probabilidad, añadimos a la demanda
-            demandaDiaria++;  // calculando la demanda
+    // Bucle que realiza n ensayos.
+    for (let i = 0; i < n; i++) {
+        // Genera un número aleatorio entre 0 y 1.
+        const numeroAleatorio = Math.random();
+
+        // Si el número aleatorio es menor que la probabilidad de éxito, se incrementa la demanda.
+        if (numeroAleatorio < probabilidadExito) {
+            // Incrementando la demanda diaria.
+            demandaDiaria++;
         }
     }
-    return demandaDiaria;  //retornamos la demanda
+
+    // Retorna la demanda diaria generada.
+    return demandaDiaria;
 }

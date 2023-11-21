@@ -12,20 +12,20 @@ var datosTabla = new Array();
     
 
 var datosGrafico = {
-    labels: [],  // Aquí puedes poner etiquetas como 'Día 1', 'Día 2', etc.
+    labels: [],  // Aquí ponemos etiquetas como 'Día 1', 'Día 2', etc.
     datasets: [{
         label: 'Costo Total del Dia',
-        data: [],  // Aquí debes poner los costos totales de cada día
+        data: [],  // Aquí ponemos los costos  totales de cada día
         backgroundColor: 'rgba(75, 192, 192, 0.2)',
         borderColor: 'rgba(75, 192, 192, 1)',
         borderWidth: 1
     }]
 };
 var datosAmbos = {
-    labels: ['POLÍTICA 1', 'POLÍTICA 2'],  // Aquí puedes poner etiquetas como 'Día 1', 'Día 2', etc.
+    labels: ['POLÍTICA 1', 'POLÍTICA 2'],  // Aquí ponemos etiquetas como 'Día 1', 'Día 2', etc.
     datasets: [{
         label: 'Costo Total',
-        data: [],  // Aquí debes poner los costos totales de cada día
+        data: [],  // Aquí ponemos los costos  totales de cada día
         backgroundColor: ['orange', 'blue'],
         borderColor: 'rgba(75, 192, 192, 1)',
         borderWidth: 1
@@ -132,8 +132,7 @@ if(politica === "politica1" || politica === "politica2"){
     
     iniciarSimulacion("politica1",tablaResultados);
     iniciarSimulacion("politica2",tablaResultados2);
-    console.log(datosAmbos);
     graficos(datosAmbos,"pie",datosTabla);
 }
 
-//graficos(datosGrafico,"bar");
+
