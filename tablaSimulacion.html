@@ -7,10 +7,11 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <header>
-        <h1>Resultados de la Simulación</h1>
-    </header>
+   
     <div class="contenedor" id="contenedor">
+        <header>
+            <h1>Resultados de la Simulación</h1>
+        </header>
 
     <div id="resultados" class="resultados">
         <h1 id="titulo1">POLÍTICA 1</h1>
@@ -58,12 +59,15 @@
         </table> 
     </div>
     <button id="mostrarGraficoBtn">Gráfico</button>
-    <canvas id="miGrafico"></canvas>
+    <div class="torta">
+        <canvas id="miGrafico" style= "height: 500px;width: 80%;"></canvas>
+    </div>
 
-  </div>
     <footer>
         <p>Derechos de autor © 2023</p>
     </footer>
+  </div>
+    
     <!-- <script src="scripts/simulacion.js"></script> -->
     <script src="scripts/demanda.js"></script>
     <script src="scripts/tiempoEntrega.js"></script>

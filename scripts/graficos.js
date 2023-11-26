@@ -13,6 +13,15 @@ function graficos(datos, tipo, costosTotales) {
             // Añade el penúltimo elemento y el último elemento de costosTotales a los datos del gráfico.
             datos.datasets[0].data.push(penultimo);
             datos.datasets[0].data.push(costosTotales.pop());
+        }else{
+            var costoMantenimieto = costosTotales[costosTotales.length - 3];
+            var costoDeficit = costosTotales[costosTotales.length - 2];
+
+            // Añade el penúltimo elemento y el último elemento de costosTotales a los datos del gráfico.
+            datos.datasets[0].data.push(costoMantenimieto);
+            datos.datasets[0].data.push(costoDeficit);
+            datos.datasets[0].data.push(costosTotales.pop());
+            tipo = "pie";
         }
 
         // Obtiene el contexto del gráfico en el elemento con id "miGrafico".
@@ -22,8 +31,14 @@ function graficos(datos, tipo, costosTotales) {
         new Chart(ctx, {
             type: tipo,  // Tipo de gráfico especificado en el parámetro.
             data: datos,  // Datos del gráfico especificados en el parámetro.
+            options: {
+                responsive: false, // Evita que el gráfico se ajuste automáticamente al contenedor
+                animation: {
+                    animateRotate: true,
+                    animateScale: false,
+                  }, }
         });
-
+    
 
         // Imprime en la consola la lista de costosTotales.
         console.log(costosTotales);

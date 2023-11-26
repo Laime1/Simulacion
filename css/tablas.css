@@ -1,5 +1,4 @@
 body {
-    font-family: Arial, sans-serif;
     background-color: #f0f0f0;
     margin: 0;
     padding: 0;
@@ -90,10 +89,17 @@ button {
   background-color: white;
   display: none;
   border: 1px solid #ccc;
-  
-}
-canvas{
-  width: 50%;
-  height: 50%;
+  max-width: 80%; /* Ajusta el tamaño del lienzo según sea necesario */
 }
 
+.torta{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+canvas{
+  width: 80%;
+  display: block;
+}

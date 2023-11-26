@@ -9,14 +9,15 @@ var tablaResultados = document.querySelector("#resultados table tbody");
 var tablaResultados2 = document.querySelector("#resultados2 table tbody"); 
 
 var datosTabla = new Array();
+var datosTotales = new Array();
     
 
 var datosGrafico = {
-    labels: [],  // Aquí ponemos etiquetas como 'Día 1', 'Día 2', etc.
+    labels: ['Costo Mantenimiento', 'Costo Deficid', 'Costo Pedido'],  // Aquí ponemos etiquetas como 'Día 1', 'Día 2', etc.
     datasets: [{
         label: 'Costo Total del Dia',
         data: [],  // Aquí ponemos los costos  totales de cada día
-        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+        backgroundColor: ['orange', 'blue', 'gray'],
         borderColor: 'rgba(75, 192, 192, 1)',
         borderWidth: 1
     }]
@@ -47,13 +48,13 @@ var deficid;
 var pedir, tiempoEntrega;
 var cantidadPedido = 0;
 var costoTotalDia, costoTotal = 0;
-
+var costoToMa = 0, costoToDe = 0, costoToPe = 0;
 
 
     function avanzarDia(){
 
         if(dia<=duracion){
-        datosGrafico.labels.push(`Día ${dia}`);
+        //datosGrafico.labels.push(`Día ${dia}`);
 
         var demandaDiaria = generarDemandaBinomial(6,0.5);
         var fila = document.createElement("tr");
@@ -81,10 +82,13 @@ var costoTotalDia, costoTotal = 0;
                                <td>${dia%8 ===0 ? costoPedido: 0}</td>
                                <td>${dia%8 ===0 ? costoTotalDia=costoM+costoPedido:costoTotalDia=costoM+costoD}</td>`; 
             costoTotal+=costoTotalDia;   //El costo total  acumulado de cada dia
-            inventarioI = tiempoEntrega === 0 ? cantidadPedido + inventarioF: inventarioF;
-            datosGrafico.datasets[0].data.push(costoTotalDia);
-            //datosAmbos.datasets[0].data.push(costoTotal);
+            costoToMa += costoM;
+            costoToDe += costoD;
+            costoToPe += dia % 8 === 0 ? costoPedido : 0;
+            datosTotales.push(costoToMa), datosTotales.push(costoToDe), datosTotales.push(costoToPe);
 
+            inventarioI = tiempoEntrega === 0 ? cantidadPedido + inventarioF: inventarioF;
+            //datosGrafico.datasets[0].data.push(costoTotalDia);
             datosTabla.push(costoTotal);
 
         }else{
@@ -94,13 +98,17 @@ var costoTotalDia, costoTotal = 0;
                                    <td>${inventarioF<=10 && pedir === "Si" ? tiempoEntrega = generarTiempoEntrega(3):0}</td>
                                    <td>${inventarioF<=10 && pedir === "Si" ? costoPedido: 0}</td>
                                    <td>${inventarioF<=10 && pedir === "Si"  ? costoTotalDia=costoM+costoPedido:costoTotalDia=costoM+costoD}</td>`;
-                costoTotal+=costoTotalDia;   
+                costoTotal+=costoTotalDia;  
+
+                costoToMa += costoM;
+                costoToDe += costoD;
+                costoToPe += inventarioF<=10 && pedir === "Si" ? costoPedido : 0;                
+                datosTotales.push(costoToMa), datosTotales.push(costoToDe), datosTotales.push(costoToPe);
+
                 inventarioI = tiempoEntrega === 0 ? cantidadPedido + inventarioF: inventarioF;
                 cantidadPedido = tiempoEntrega === 0 ? 0:cantidadPedido;
                 datosTabla.push(costoTotal);
-                datosGrafico.datasets[0].data.push(costoTotalDia);
-                //datosAmbos.datasets[0].data.push(costoTotal);
-
+                //datosGrafico.datasets[0].data.push(costoTotalDia);
 
         }
 
@@ -126,7 +134,7 @@ if(politica === "politica1" || politica === "politica2"){
     if(politica === "politica2"){
         document.getElementById("titulo1").innerHTML = "POLÍTICA 2";
     }
-    graficos(datosGrafico,"bar",null);
+    graficos(datosGrafico,"gra",datosTotales);
     //quiero crear un boton para mostrar los datos que guarde en datosGrafico, para mostrar un grafico de barras
 }else{
     
