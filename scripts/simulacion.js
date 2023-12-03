@@ -15,7 +15,7 @@ var datosTotales = new Array();
 var datosGrafico = {
     labels: ['Costo Mantenimiento', 'Costo Deficid', 'Costo Pedido'],  // Aquí ponemos etiquetas como 'Día 1', 'Día 2', etc.
     datasets: [{
-        label: 'Costo Total del Dia',
+        label: 'Costo Total',
         data: [],  // Aquí ponemos los costos  totales de cada día
         backgroundColor: ['orange', 'blue', 'gray'],
         borderColor: 'rgba(75, 192, 192, 1)',

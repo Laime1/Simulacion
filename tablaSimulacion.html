@@ -19,17 +19,17 @@
             <thead>
                 <tr>
                     <th>Día</th>
-                    <th>Inventario Inicial</th>
-                    <th>Demanda</th>
-                    <th>Inventario Final</th>
-                    <th>Faltante</th>
-                    <th>Costo Mantenimiento</th>
-                    <th>Costo Déficit</th>
-                    <th>¿Pedir Inventario?</th>
-                    <th>Cantidad de Pedido</th>
-                    <th>Tiempo de Entrega</th>
-                    <th>Costo de Pedido</th>
-                    <th>Costo Día</th>
+                    <th id="inicial" class="inicial" onmouseover="mostrarModal('inicial')" onmouseout="cerrarModal()">Inventario Inicial</th>
+                    <th id="demanda" class="demanda" onmouseover="mostrarModal('demanda')" onmouseout="cerrarModal()">Demanda</th>
+                    <th id="final" class="final" onmouseover="mostrarModal('final')" onmouseout="cerrarModal()">Inventario Final</th>
+                    <th id="faltante" class="faltante" onmouseover="mostrarModal('faltante')" onmouseout="cerrarModal()">Faltante</th>                    
+                    <th id="mantenimiento" class="mantenimiento" onmouseover="mostrarModal('mantenimiento')" onmouseout="cerrarModal()">Costo de Mantenimiento</th>                    
+                    <th id="deficit" class="deficit" onmouseover="mostrarModal('deficit')" onmouseout="cerrarModal()">Costo Déficit</th>
+                    <th id="pedir" class="pedir" onmouseover="mostrarModal('pedir')" onmouseout="cerrarModal()">¿Pedir Inventario?</th>
+                    <th id="cantidad" class="cantidad" onmouseover="mostrarModal('cantidad')" onmouseout="cerrarModal()">Cantidad de Pedido</th>
+                    <th id="entrega" class="entrega" onmouseover="mostrarModal('entrega')" onmouseout="cerrarModal()">Tiempo de Entrega</th>
+                    <th id="pedido" class="pedido" onmouseover="mostrarModal('pedido')" onmouseout="cerrarModal()">Costo de Pedido</th>
+                    <th id="total" class="total" onmouseover="mostrarModal('total')" onmouseout="cerrarModal()">Costo Día</th>
                 </tr>
             </thead>
             <tbody></tbody>
@@ -42,17 +42,17 @@
             <thead>
                 <tr>
                     <th>Día</th>
-                    <th>Inventario Inicial</th>
-                    <th>Demanda</th>
-                    <th>Inventario Final</th>
-                    <th>Faltante</th>
-                    <th>Costo Mantenimiento</th>
-                    <th>Costo Déficit</th>
-                    <th>¿Pedir Inventario?</th>
-                    <th>Cantidad de Pedido</th>
-                    <th>Tiempo de Entrega</th>
-                    <th>Costo de Pedido</th>
-                    <th>Costo Día</th>
+                    <th id="inicial" class="inicial" onmouseover="mostrarModal('inicial')" onmouseout="cerrarModal()">Inventario Inicial</th>
+                    <th id="demanda" class="demanda" onmouseover="mostrarModal('demanda')" onmouseout="cerrarModal()">Demanda</th>
+                    <th id="final" class="final" onmouseover="mostrarModal('final')" onmouseout="cerrarModal()">Inventario Final</th>
+                    <th id="faltante" class="faltante" onmouseover="mostrarModal('faltante')" onmouseout="cerrarModal()">Faltante</th>                    
+                    <th id="mantenimiento" class="mantenimiento" onmouseover="mostrarModal('mantenimiento')" onmouseout="cerrarModal()">Costo de Mantenimiento</th>                    
+                    <th id="deficit" class="deficit" onmouseover="mostrarModal('deficit')" onmouseout="cerrarModal()">Costo Déficit</th>
+                    <th id="pedir" class="pedir" onmouseover="mostrarModal('pedir')" onmouseout="cerrarModal()">¿Pedir Inventario?</th>
+                    <th id="cantidad" class="cantidad" onmouseover="mostrarModal('cantidad')" onmouseout="cerrarModal()">Cantidad de Pedido</th>
+                    <th id="entrega" class="entrega" onmouseover="mostrarModal('entrega')" onmouseout="cerrarModal()">Tiempo de Entrega</th>
+                    <th id="pedido" class="pedido" onmouseover="mostrarModal('pedido')" onmouseout="cerrarModal()">Costo de Pedido</th>
+                    <th id="total" class="total" onmouseover="mostrarModal('total')" onmouseout="cerrarModal()">Costo Día</th>
                 </tr>
             </thead>
             <tbody></tbody>
@@ -66,7 +66,14 @@
     <footer>
         <p>Derechos de autor © 2023</p>
     </footer>
+    
   </div>
+
+  <div id="miModal" class="modal">
+    <div class="modal-contenido">
+        <p id="explicacion"></p>
+    </div>
+ </div>
     
     <!-- <script src="scripts/simulacion.js"></script> -->
     <script src="scripts/demanda.js"></script>
@@ -74,6 +81,7 @@
     <script src="scripts/datosEntrada.js"></script>
     <script src="scripts/graficos.js"></script>
     <script src="scripts/simulacion.js"></script>
+    <script src="scripts/modal.js"></script>
 
 </body>
 </html>
