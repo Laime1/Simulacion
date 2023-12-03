@@ -5,6 +5,7 @@
     <title>Tabla de Simulación</title>
     <link rel="stylesheet" type="text/css" href="css/tablas.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
 </head>
 <body>
    
@@ -15,7 +16,7 @@
 
     <div id="resultados" class="resultados">
         <h1 id="titulo1">POLÍTICA 1</h1>
-        <table>
+        <table id="politica1">
             <thead>
                 <tr>
                     <th>Día</th>
@@ -37,7 +38,7 @@
     </div>
 
     <div id="resultados2" class="contenedor2">
-        <table>
+        <table id="politica2">
             <h1>POLÍTICA 2</h1>
             <thead>
                 <tr>
@@ -58,6 +59,7 @@
             <tbody></tbody>
         </table> 
     </div>
+    <button onclick="exportarExcel()">Descargar</button>
     <button id="mostrarGraficoBtn">Gráfico</button>
     <div class="torta">
         <canvas id="miGrafico" style= "height: 500px;width: 80%;"></canvas>
@@ -82,6 +84,7 @@
     <script src="scripts/graficos.js"></script>
     <script src="scripts/simulacion.js"></script>
     <script src="scripts/modal.js"></script>
+    <script src="scripts/exportar.js"></script>
 
 </body>
 </html>
