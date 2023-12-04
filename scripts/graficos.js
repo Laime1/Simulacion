@@ -114,7 +114,11 @@ function graficos(datos, tipo, costosTotales) {
             datos.datasets[0].data.push(costosTotales.pop());
             tipo = "pie";
 
-            new Chart(ctx, {
+         document.getElementById("costos1").innerHTML = "Costo de mantenimiento: "+costoMantenimieto1+" Bs";
+        document.getElementById("costos11").innerHTML = "Costo de deficít: "+costoDeficit1+" Bs";
+        document.getElementById("costos12").innerHTML = "Costo de Pedido: "+datos.datasets[0].data[2]+" Bs";
+            
+        new Chart(ctx, {
                 type: tipo,  // Tipo de gráfico especificado en el parámetro.
                 data: datos,  // Datos del gráfico especificados en el parámetro.
                 options: {
