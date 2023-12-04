@@ -83,7 +83,8 @@ button {
   border-radius: 8px;
 }
 
-#miGrafico {
+
+#miGrafico, #miGrafico1, #miGrafico2{
   margin: 20px;
   padding: 20px;
   background-color: white;
@@ -92,17 +93,35 @@ button {
   max-width: 80%; /* Ajusta el tamaño del lienzo según sea necesario */
 }
 
-.torta{
+.torta {
   display: flex;
+  flex-direction: column; /* Asegura que los elementos dentro de la torta estén en una columna */
   align-items: center;
   justify-content: center;
   margin: 0;
+  text-align: center; /* Centra el texto dentro del contenedor */
 }
 
-canvas{
+canvas {
   width: 80%;
+  max-width: 100%; /* Ajusta el tamaño máximo al 100% del contenedor padre */
   display: block;
+  margin-top: 10px; /* Añade un pequeño espacio entre el canvas y el texto */
 }
+
+/* Estilo adicional para el título */
+.torta h2 {
+  margin: 10px 0; /* Añade margen alrededor del título */
+}
+
+/* Ajustes generales para el lienzo */
+canvas {
+  margin: 20px;
+  padding: 20px;
+  background-color: white;
+  border: 1px solid #ccc;
+}
+
 
 .modal {
   display: none;
@@ -126,4 +145,6 @@ canvas{
   border: 1px solid black;
   width: 80%;
 }
-
+ #graficos{
+  display: none;
+ }

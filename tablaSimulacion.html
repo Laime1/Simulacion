@@ -61,10 +61,22 @@
     </div>
     <button onclick="exportarExcel()">Descargar</button>
     <button id="mostrarGraficoBtn">Gráfico</button>
-    <div class="torta">
-        <canvas id="miGrafico" style= "height: 500px;width: 80%;"></canvas>
+   
+    <div id="graficos">
+        <div id="grafica1" class="torta">
+            <h2 id="grafico1">Politica 1</h2>
+            <canvas id="miGrafico" style= "height: 500px;width: 80%;"></canvas>
+        </div>
+        <div id="grafica2" class="torta">
+            <h2>Politica 2</h2>
+            <canvas id="miGrafico1" style= "height: 500px;width: 80%;"></canvas>
+        </div>
+        <div id="grafica3" class="torta">
+            <h2>Costos Totales</h2>
+            <canvas id="miGrafico2" style= "height: 500px;width: 80%;"></canvas>
+        </div>
     </div>
-
+    
     <footer>
         <p>Derechos de autor © 2023</p>
     </footer>

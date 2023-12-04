@@ -8,8 +8,8 @@ var duracion = datoss.duracion;
 var tablaResultados = document.querySelector("#resultados table tbody"); 
 var tablaResultados2 = document.querySelector("#resultados2 table tbody"); 
 
-var datosTabla = new Array();
-var datosTotales = new Array();
+var datosTabla = new Array(); //costo Total
+var datosTotales = new Array(); //costo de cada politica
     
 
 var datosGrafico = {
@@ -127,20 +127,26 @@ var costoToMa = 0, costoToDe = 0, costoToPe = 0;
 }
 
 
+var ctx2 = document.getElementById('miGrafico2').getContext('2d');
+
+
 
 if(politica === "politica1" || politica === "politica2"){
     document.getElementById("resultados2").remove();
     iniciarSimulacion(politica,tablaResultados);
     if(politica === "politica2"){
         document.getElementById("titulo1").innerHTML = "POLÍTICA 2";
+        document.getElementById("grafico1").innerHTML = "Politica 2";
     }
-    graficos(datosGrafico,"gra",datosTotales);
+    graficos(datosGrafico,"solo",datosTotales);
     //quiero crear un boton para mostrar los datos que guarde en datosGrafico, para mostrar un grafico de barras
 }else{
     
     iniciarSimulacion("politica1",tablaResultados);
     iniciarSimulacion("politica2",tablaResultados2);
+    graficos(datosGrafico,"gra",datosTotales);
     graficos(datosAmbos,"pie",datosTabla);
+
 }
 
 
