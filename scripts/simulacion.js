@@ -80,7 +80,7 @@ var costoToMa = 0, costoToDe = 0, costoToPe = 0;
                                <td>${dia%8 === 0 ? cantidadPedido=30 - (inventarioF):0}</td>
                                <td>${dia%8 === 0 ? tiempoEntrega = generarTiempoEntrega(3):0}</td>
                                <td>${dia%8 ===0 ? costoPedido: 0}</td>
-                               <td>${dia%8 ===0 ? costoTotalDia=costoM+costoPedido:costoTotalDia=costoM+costoD}</td>`; 
+                               <td>${dia%8 ===0 ? costoTotalDia=costoM+costoPedido+costoD:costoTotalDia=costoM+costoD}</td>`; 
             costoTotal+=costoTotalDia;   //El costo total  acumulado de cada dia
             costoToMa += costoM;
             costoToDe += costoD;
@@ -114,7 +114,7 @@ var costoToMa = 0, costoToDe = 0, costoToPe = 0;
 
 
         tabla.appendChild(fila);
-        setTimeout(avanzarDia, 500);
+        setTimeout(avanzarDia, 250);
         dia++;
         tiempoEntrega--;
 

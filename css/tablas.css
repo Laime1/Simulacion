@@ -100,6 +100,7 @@ button {
   justify-content: center;
   margin: 0;
   text-align: center; /* Centra el texto dentro del contenedor */
+  background-color: white;
 }
 
 canvas {
@@ -119,9 +120,11 @@ canvas {
   margin: 20px;
   padding: 20px;
   background-color: white;
-  border: 1px solid #ccc;
 }
 
+.grafica1 {
+  border: 1px solid black;
+}
 
 .modal {
   display: none;

@@ -24,13 +24,13 @@
                     <th id="demanda" class="demanda" onmouseover="mostrarModal('demanda')" onmouseout="cerrarModal()">Demanda</th>
                     <th id="final" class="final" onmouseover="mostrarModal('final')" onmouseout="cerrarModal()">Inventario Final</th>
                     <th id="faltante" class="faltante" onmouseover="mostrarModal('faltante')" onmouseout="cerrarModal()">Faltante</th>                    
-                    <th id="mantenimiento" class="mantenimiento" onmouseover="mostrarModal('mantenimiento')" onmouseout="cerrarModal()">Costo de Mantenimiento</th>                    
-                    <th id="deficit" class="deficit" onmouseover="mostrarModal('deficit')" onmouseout="cerrarModal()">Costo Déficit</th>
+                    <th id="mantenimiento" class="mantenimiento" onmouseover="mostrarModal('mantenimiento')" onmouseout="cerrarModal()">Costo de Mantenimiento(Bs)</th>                    
+                    <th id="deficit" class="deficit" onmouseover="mostrarModal('deficit')" onmouseout="cerrarModal()">Costo Déficit(Bs)</th>
                     <th id="pedir" class="pedir" onmouseover="mostrarModal('pedir')" onmouseout="cerrarModal()">¿Pedir Inventario?</th>
                     <th id="cantidad" class="cantidad" onmouseover="mostrarModal('cantidad')" onmouseout="cerrarModal()">Cantidad de Pedido</th>
                     <th id="entrega" class="entrega" onmouseover="mostrarModal('entrega')" onmouseout="cerrarModal()">Tiempo de Entrega</th>
-                    <th id="pedido" class="pedido" onmouseover="mostrarModal('pedido')" onmouseout="cerrarModal()">Costo de Pedido</th>
-                    <th id="total" class="total" onmouseover="mostrarModal('total')" onmouseout="cerrarModal()">Costo Día</th>
+                    <th id="pedido" class="pedido" onmouseover="mostrarModal('pedido')" onmouseout="cerrarModal()">Costo de Pedido(Bs)</th>
+                    <th id="total" class="total" onmouseover="mostrarModal('total')" onmouseout="cerrarModal()">Costo Día(Bs)</th>
                 </tr>
             </thead>
             <tbody></tbody>
@@ -47,13 +47,13 @@
                     <th id="demanda" class="demanda" onmouseover="mostrarModal('demanda')" onmouseout="cerrarModal()">Demanda</th>
                     <th id="final" class="final" onmouseover="mostrarModal('final')" onmouseout="cerrarModal()">Inventario Final</th>
                     <th id="faltante" class="faltante" onmouseover="mostrarModal('faltante')" onmouseout="cerrarModal()">Faltante</th>                    
-                    <th id="mantenimiento" class="mantenimiento" onmouseover="mostrarModal('mantenimiento')" onmouseout="cerrarModal()">Costo de Mantenimiento</th>                    
-                    <th id="deficit" class="deficit" onmouseover="mostrarModal('deficit')" onmouseout="cerrarModal()">Costo Déficit</th>
+                    <th id="mantenimiento" class="mantenimiento" onmouseover="mostrarModal('mantenimiento')" onmouseout="cerrarModal()">Costo de Mantenimiento(Bs)</th>                    
+                    <th id="deficit" class="deficit" onmouseover="mostrarModal('deficit')" onmouseout="cerrarModal()">Costo Déficit(Bs)</th>
                     <th id="pedir" class="pedir" onmouseover="mostrarModal('pedir')" onmouseout="cerrarModal()">¿Pedir Inventario?</th>
                     <th id="cantidad" class="cantidad" onmouseover="mostrarModal('cantidad')" onmouseout="cerrarModal()">Cantidad de Pedido</th>
                     <th id="entrega" class="entrega" onmouseover="mostrarModal('entrega')" onmouseout="cerrarModal()">Tiempo de Entrega</th>
-                    <th id="pedido" class="pedido" onmouseover="mostrarModal('pedido')" onmouseout="cerrarModal()">Costo de Pedido</th>
-                    <th id="total" class="total" onmouseover="mostrarModal('total')" onmouseout="cerrarModal()">Costo Día</th>
+                    <th id="pedido" class="pedido" onmouseover="mostrarModal('pedido')" onmouseout="cerrarModal()">Costo de Pedido(Bs)</th>
+                    <th id="total" class="total" onmouseover="mostrarModal('total')" onmouseout="cerrarModal()">Costo Día(Bs)</th>
                 </tr>
             </thead>
             <tbody></tbody>
@@ -63,17 +63,32 @@
     <button id="mostrarGraficoBtn">Gráfico</button>
    
     <div id="graficos">
-        <div id="grafica1" class="torta">
+        <div id="grafica1" class="torta" style="border: 1px solid black;">
             <h2 id="grafico1">Politica 1</h2>
             <canvas id="miGrafico" style= "height: 500px;width: 80%;"></canvas>
+            <ul>
+                <li id="costos1"></li>
+                <li id="costos11"></li>
+                <li id="costos12"></li>
+            </ul>
         </div>
-        <div id="grafica2" class="torta">
+        <div id="grafica2" class="torta" style="border: 1px solid black;">
             <h2>Politica 2</h2>
             <canvas id="miGrafico1" style= "height: 500px;width: 80%;"></canvas>
+            <ul>
+                <li id="costos2"></li>
+                <li id="costos21"></li>
+                <li id="costos22"></li>
+            </ul>
         </div>
-        <div id="grafica3" class="torta">
+        <div id="grafica3" class="torta" style="border: 1px solid black;">
             <h2>Costos Totales</h2>
             <canvas id="miGrafico2" style= "height: 500px;width: 80%;"></canvas>
+            <ul>
+                <li id="totales1"></li>
+                <li id="totales2"></li>
+                <li id="totales"></li>
+            </ul>
         </div>
     </div>
     

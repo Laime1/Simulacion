@@ -15,6 +15,15 @@ function graficos(datos, tipo, costosTotales) {
             datos.datasets[0].data.push(penultimo);
             datos.datasets[0].data.push(costosTotales.pop());
 
+            document.getElementById("totales1").innerHTML = "El Costo total de la politica 1 es: "+ datos.datasets[0].data[0]+" Bs";
+            document.getElementById("totales2").innerHTML = "El Costo total de la politica 2 es: "+ datos.datasets[0].data[1]+" Bs";
+
+            if(datos.datasets[0].data[0]>=datos.datasets[0].data[1]){
+                document.getElementById("totales").innerHTML = "Politica 2 es la mas económica";
+            }else{
+                document.getElementById("totales").innerHTML = "Politica 1 es la mas económica";
+            }
+
             new Chart(ctx2, {
                 type: tipo,  // Tipo de gráfico especificado en el parámetro.
                 data: datos,  // Datos del gráfico especificados en el parámetro.
@@ -25,6 +34,10 @@ function graficos(datos, tipo, costosTotales) {
                         animateScale: false,
                       }, }
             });
+            
+            console.log(datos.datasets[0].data[0]);
+            console.log(datos.datasets[0].data[1]);
+
 
         }else if(tipo === "gra"){
 
@@ -41,7 +54,12 @@ function graficos(datos, tipo, costosTotales) {
             datos.datasets[0].data.push(costosTotales.pop());
             tipo = "pie";
 
-            new Chart(ctx, {
+            document.getElementById("costos2").innerHTML = "Costo de mantenimiento: "+costoMantenimieto1+" Bs";
+            document.getElementById("costos21").innerHTML = "Costo de deficít: "+costoDeficit1+" Bs";
+            document.getElementById("costos22").innerHTML = "Costo de Pedido: "+datos.datasets[0].data[2]+" Bs";
+
+
+            new Chart(ctx1, {
                 type: tipo,  // Tipo de gráfico especificado en el parámetro.
                 data: datos,  // Datos del gráfico especificados en el parámetro.
                 options: {
@@ -63,7 +81,11 @@ function graficos(datos, tipo, costosTotales) {
         datos.datasets[0].data.push(costoDeficit);
         datos.datasets[0].data.push(costosTotales.pop());
 
-        new Chart(ctx1, {
+        document.getElementById("costos1").innerHTML = "Costo de mantenimiento: "+costoMantenimieto+" Bs";
+        document.getElementById("costos11").innerHTML = "Costo de deficít: "+costoDeficit+" Bs";
+        document.getElementById("costos12").innerHTML = "Costo de Pedido: "+datos.datasets[0].data[2]+" Bs";
+
+        new Chart(ctx, {
             type: tipo,  // Tipo de gráfico especificado en el parámetro.
             data: datos,  // Datos del gráfico especificados en el parámetro.
             options: {
